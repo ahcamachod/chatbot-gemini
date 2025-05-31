@@ -80,7 +80,7 @@ def bot(prompt):
                 respuesta = chatbot.send_message([archivo_imagen,mensaje_usuario])   
                 os.remove(camino_imagen_enviada)
                 camino_imagen_enviada = None
-
+            respuesta = chatbot.send_message(mensaje_usuario)
             if len(chatbot.history) > 4:
                 chatbot.history = eliminar_mensajes_antiguos(chatbot.history)
             print(f'La cantidad de mensajes es: {len(chatbot.history)}\n{chatbot.history}')
